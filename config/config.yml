@@ -8,10 +8,10 @@ settings:
   glass-card: true
   background: 
     type: image
-    content: /img/waffles.jpg
+    content: /static/images/waffles.jpg
   image:
     type: image
-    content: /img/avatar.jpeg
+    content: /static/images/avatar.jpeg
   links:
     - name: Discord
       link: https://discord.gg/VnskbWb4Ft

@@ -60,3 +60,6 @@ body {
   margin: 0;
   padding: 0;
 }
+.smallimage {
+  border-radius: 50%;
+}

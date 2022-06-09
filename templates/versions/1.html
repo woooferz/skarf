@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ config['name'] }}</title>
-    <link rel="stylesheet" href="css/fontawesome.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/res/css/fontawesome.css" />
+    <link rel="stylesheet" href="res/css/style.css" />
     <style>
       body {
         font-family: {{ config["font"] }};
@@ -68,6 +68,14 @@
             <i
               class="fa-{{ link['image']['style'] }} fa-{{ link['image']['content'] }}"
             ></i>
+            {% endif %} {% if link['image']['type'] == "image" %}
+
+            <img
+              src="{{ link['image']['content'] }}"
+              alt="Image"
+              class="smallimage"
+              width="15px"
+            />
             {% endif %} {{ link['name']}}</a
           >
         </li>
