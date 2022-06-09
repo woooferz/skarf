@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ config['name'] }}</title>
+    <link rel="stylesheet" href="css/fontawesome.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        font-family: {{ config["font"] }};
+        {% if config['background']['type'] == "color" %}
+          background-color: {{ config['background']['content'] }};
+        {% endif %}
+        {% if config['background']['type'] == "image" %}
+          background-image: url("{{ config['background']['content'] }}");
+        {% endif %}
+      }
+      div.container {
+        {% if config['glass-card'] %}
+          /* From https://css.glass */
+          background: rgba(255, 255, 255, 0.67);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(7.5px);
+          -webkit-backdrop-filter: blur(7.5px);
+        {% endif %}
+      }
+      .name, .icon {
+        color: {{ config['color'] }};
+      }
+      ul.social-list > li.social-item {
+        color: {{ config['link-color'] }};
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Version 1
+    <i class="fa fa-cloud"></i><i class="fa-brands fa-discord"></i> -->
+    <div class="container">
+      {% if config['image']['type'] == "font-awesome" %}
+      <i
+        class="fa-{{ config['image']['style'] }} fa-{{ config['image']['content'] }} icon"
+      ></i>
+      {% endif %} {% if config['image']['type'] == "image" %}
+
+      <img
+        src="{{ config['image']['content'] }}"
+        alt="Avatar"
+        class="image"
+        width="200px"
+      />
+      {% endif %}
+      <h1 class="name">{{ config['name'] }}</h1>
+      <h3 class="subtitle name">{{ config['subtitle'] }}</h3>
+
+      <!--Waffle-->
+      <ul class="social-list">
+        {% for link in config['links'] %}
+        <li
+          style="background-color: {{ link['color'] }} "
+          class="social-item"
+          onclick="console.log(this.firstChild)"
+        >
+          <a href="{{ link['link'] }}">
+            {% if link['image']['type'] == "font-awesome" %}
+            <i
+              class="fa-{{ link['image']['style'] }} fa-{{ link['image']['content'] }}"
+            ></i>
+            {% endif %} {{ link['name']}}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

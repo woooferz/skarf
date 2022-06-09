@@ -1,0 +1,62 @@
+div.container {
+  padding: 10px;
+  text-align: center;
+  width: max-content;
+  margin: 10px auto;
+  border-radius: 10px;
+  /* From https://css.glass */
+  /* background: rgba(255, 255, 255, 0.67);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px); */
+}
+ul.social-list {
+  list-style-type: none;
+  padding: 0;
+}
+ul.social-list > li.social-item {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+
+  border-radius: 15px;
+}
+ul.social-list > li.social-item > a {
+  color: inherit;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+}
+.icon {
+  font-size: 100px;
+}
+
+.image {
+  border-radius: 50%;
+  width: 200px;
+}
+
+@media only screen and (max-width: 360px) {
+  ul.social-list > li.social-item {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  ul.social-list > li.social-item {
+    width: 150px;
+  }
+  .image {
+    width: 150px;
+  }
+}
+body {
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* overflow: scroll; */
+  margin: 0;
+  padding: 0;
+}

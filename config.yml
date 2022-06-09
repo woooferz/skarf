@@ -1,0 +1,37 @@
+version: 1
+settings:
+  name: 'Wooferz'
+  subtitle: 'A waffle loving person'
+  font: Roboto, Arial
+  color: '#6F6F6F'
+  link-color: '#F6F6F6'
+  glass-card: true
+  background: 
+    type: image
+    content: /img/waffles.jpg
+  image:
+    type: image
+    content: /img/avatar.jpeg
+  links:
+    - name: Discord
+      link: https://discord.gg/VnskbWb4Ft
+      image:
+        type: font-awesome
+        style: brands
+        content: discord
+      color: '#454FBF'
+    - name: GitHub
+      link: https://github.com/woooferz
+      image:
+        type: font-awesome
+        style: brands
+        content: github
+      color: '#3F3F3F'
+    - name: Email
+      link: mailto:wooferz.contact@gmail.com
+      image:
+        type: font-awesome
+        style: solid
+        content: envelope
+      color: '#3F3F3F'
+    
