@@ -1,17 +1,20 @@
-# start by pulling the python image
-FROM python:3.8-alpine
+FROM python:3.8-slim
 
-# copy the requirements file into the image
-COPY ./requirements.txt /app/requirements.txt
 
-# switch working directory
-WORKDIR /app
+COPY . /srv/flask_app
 
-# install the dependencies and packages in the requirements file
-RUN pip install -r requirements.txt
+WORKDIR /srv/flask_app
 
-# copy every content from the local file to the image
-COPY . /app
+RUN apt-get clean \
+    && apt-get -y update
 
-# configure the container to run in an executed manner
-ENTRYPOINT [ "python", "." ]
+RUN apt-get -y install nginx python3-dev \
+    && apt-get -y install build-essential
+
+RUN pip install -r requirements.txt --src /usr/local/src
+
+COPY nginx.conf /etc/nginx
+
+RUN chmod +x ./start.sh
+
+CMD ["./start.sh"]
