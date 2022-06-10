@@ -1,6 +1,10 @@
 from flask import Flask, render_template, redirect, jsonify, send_from_directory
 import yaml
 
+version = "v0.1"
+
+print(f"Skarf {version}")
+
 print("Loading Config...")
 with open("config/config.yml", "r") as f:
     config = yaml.load(f.read(), Loader=yaml.Loader)
