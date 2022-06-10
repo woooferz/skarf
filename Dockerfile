@@ -1,9 +1,9 @@
 FROM python:3.8-slim
 
 
-COPY . /srv/flask_app
+COPY . /app
 
-WORKDIR /srv/flask_app
+WORKDIR /app
 
 RUN apt-get clean \
     && apt-get -y update
