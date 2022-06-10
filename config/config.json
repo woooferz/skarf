@@ -1,0 +1,42 @@
+{
+    "settings": {
+        "background": {
+            "content": "#2F2F2F",
+            "type": "color"
+        },
+        "color": "#6F6F6F",
+        "font": "Roboto, Arial",
+        "glass-card": true,
+        "image": {
+            "content": "user",
+            "style": "solid",
+            "type": "font-awesome"
+        },
+        "link-color": "#F6F6F6",
+        "links": [
+            {
+                "color": "#454FBF",
+                "image": {
+                    "content": "google",
+                    "style": "brands",
+                    "type": "font-awesome"
+                },
+                "link": "https:\/\/google.com",
+                "name": "Google"
+            },
+            {
+                "color": "#3F3F3F",
+                "image": {
+                    "content": "github",
+                    "style": "brands",
+                    "type": "font-awesome"
+                },
+                "link": "https:\/\/github.com\/woooferz\/skarf",
+                "name": "Skarf Github"
+            }
+        ],
+        "name": "Person",
+        "subtitle": "Some for info"
+    },
+    "version": 1
+}
