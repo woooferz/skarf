@@ -1,42 +1,42 @@
 {
-    "settings": {
-        "background": {
-            "content": "#2F2F2F",
-            "type": "color"
-        },
-        "color": "#6F6F6F",
-        "font": "Roboto, Arial",
-        "glass-card": true,
-        "image": {
-            "content": "user",
-            "style": "solid",
-            "type": "font-awesome"
-        },
-        "link-color": "#F6F6F6",
-        "links": [
-            {
-                "color": "#454FBF",
-                "image": {
-                    "content": "google",
-                    "style": "brands",
-                    "type": "font-awesome"
-                },
-                "link": "https:\/\/google.com",
-                "name": "Google"
-            },
-            {
-                "color": "#3F3F3F",
-                "image": {
-                    "content": "github",
-                    "style": "brands",
-                    "type": "font-awesome"
-                },
-                "link": "https:\/\/github.com\/woooferz\/skarf",
-                "name": "Skarf Github"
-            }
-        ],
-        "name": "Person",
-        "subtitle": "Some for info"
+  "version": 1,
+  "settings": {
+    "name": "Person",
+    "subtitle": "Some for info",
+    "font": "Roboto, Arial",
+    "color": "#6F6F6F",
+    "link-color": "#F6F6F6",
+    "glass-card": true,
+    "background": {
+      "type": "color",
+      "content": "#2F2F2F"
     },
-    "version": 1
+    "image": {
+      "type": "font-awesome",
+      "style": "solid",
+      "content": "user"
+    },
+    "links": [
+      {
+        "name": "Google",
+        "link": "https://google.com",
+        "image": {
+          "type": "font-awesome",
+          "style": "brands",
+          "content": "google"
+        },
+        "color": "#454FBF"
+      },
+      {
+        "name": "Skarf Github",
+        "link": "https://github.com/woooferz/skarf",
+        "image": {
+          "type": "font-awesome",
+          "style": "brands",
+          "content": "github"
+        },
+        "color": "#3F3F3F"
+      }
+    ]
+  }
 }
