@@ -1,4 +1,4 @@
-# Awesome Card Thing for Socials
+# Skarf
 Self-Hosted Linktree/beacons.ai and stuff
 
 ## Installation Guide
