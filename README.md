@@ -1,5 +1,6 @@
 # Skarf
 Self-Hosted Linktree/beacons.ai and stuff
+Demo: https://me.wooferz.dev
 
 ## Installation Guide
 
