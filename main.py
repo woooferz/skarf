@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, jsonify, send_from_directory
 import yaml
 import json
 
-version = "v0.1.1"
+version = "v0.1.2"
 
 print(f"Skarf {version}")
 

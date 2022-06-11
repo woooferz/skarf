@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "settings": {
     "name": "Person",
     "subtitle": "Some for info",
@@ -11,6 +11,8 @@
       "type": "color",
       "content": "#2F2F2F"
     },
+    "favicon": "/static/favicon.png",
+    "description": "Some info in the meta description tag",
     "image": {
       "type": "font-awesome",
       "style": "solid",

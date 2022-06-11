@@ -1,4 +1,4 @@
-version: 1
+version: 2 # pls no touch this
 settings:
   name: 'Person' # Main name
   subtitle: 'Some for info' # A little text below namwe
@@ -9,6 +9,8 @@ settings:
   background: # The background info
     type: color # image or color Decides what to put as the background
     content: '#2F2F2F' # url to image or a color code (e.g. /static/bg.png)
+  favicon: /static/favicon.png # If you want a favicon
+  description: Some info in the meta description tag # If you want a meta description
   image:
     type: font-awesome # image or font-awesome decides how to display avatar
     style: solid # for font-awesome. Decides what style to display the icon
