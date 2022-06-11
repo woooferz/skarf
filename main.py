@@ -2,9 +2,9 @@ from flask import Flask, render_template, redirect, jsonify, send_from_directory
 import yaml
 import json
 
-version = "v0.1.2"
+skarf_version = "v0.1.3"
 
-print(f"Skarf {version}")
+print(f"Skarf {skarf_version}")
 
 print("Loading Config...")
 try:
@@ -17,10 +17,13 @@ except FileNotFoundError:
             config = json.loads(f.read())
         print("Loaded JSON")
     except FileNotFoundError:
-        print("Could not locate config!")
-        exit(1)
+        print("Could not find config")
+        config = None
 
-print("Loaded!")
+if config:
+    print("Loaded!")
+else:
+    print("Error while loading config")
 # print(config)
 
 app = Flask(__name__)
@@ -28,7 +31,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template(f"versions/{str(config['version'])}.html", config=config['settings'])
+    if config:
+        return render_template(f"versions/{str(config['version'])}.html", config=config['settings'])
+    else:
+        return render_template("no_config.html", the_version=skarf_version)
 
 
 @app.route('/static/<path:path>')
