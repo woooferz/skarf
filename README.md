@@ -1,5 +1,7 @@
 # Skarf
-Self-Hosted Linktree/beacons.ai and stuff
+![Build](https://img.shields.io/github/workflow/status/woooferz/skarf/Docker/master)
+
+Self-Hosted Linktree/beacons.ai with easy configuration.
 
 ## Installation Guide
 
