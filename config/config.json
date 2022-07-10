@@ -1,10 +1,12 @@
 {
-  "version": 3,
+  "version": 4,
   "debug": false,
   "settings": {
     "name": "Person",
     "subtitle": "Some for info",
     "font": "Roboto, Arial",
+    "verified": false,
+    "check-color": "#55FF11",
     "color": "#6F6F6F",
     "link-color": "#F6F6F6",
     "glass-card": true,
