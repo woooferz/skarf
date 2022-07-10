@@ -3,6 +3,11 @@
 ![Build](https://img.shields.io/github/workflow/status/woooferz/skarf/Docker/master?style=for-the-badge)
 ![Read the Docs](https://img.shields.io/readthedocs/skarf-docs?style=for-the-badge)
 ![Discord](https://img.shields.io/discord/973532704740110386?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/woooferz/skarf?style=for-the-badge)
+![Lines of code](https://img.shields.io/tokei/lines/github/woooferz/skarf?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/woooferz/skarf?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/woooferz/skarf?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/woooferz/skarf?style=for-the-badge)
 
 Self-Hosted Linktree/beacons.ai with easy configuration.
 
