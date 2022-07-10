@@ -2,13 +2,11 @@
 
 ![Build](https://img.shields.io/github/workflow/status/woooferz/skarf/Docker/master?style=for-the-badge)
 ![Read the Docs](https://img.shields.io/readthedocs/skarf-docs?style=for-the-badge)
-
+![Discord](https://img.shields.io/discord/973532704740110386?style=for-the-badge)
 
 Self-Hosted Linktree/beacons.ai with easy configuration.
 
-Demo: https://skarfdemo.wooferz.dev/
-
-Docs: https://skarf-docs.readthedocs.io/en/latest/index.html
+[Demo](https://skarfdemo.wooferz.dev/) /  [Docs](ttps://skarf-docs.readthedocs.io/en/latest/index.html) / [Support Discord](https://discord.gg/VnskbWb4Ft)
 
 ## Screenshot
 

@@ -33,21 +33,24 @@ if config:
 else:
     print("Error while loading config")
 # print(config)
-if config["debug"]:
-    print("SKARF IS IN DEBUG MODE! THIS IS NOT PRODUCTION READY!")
-
+try:
+    if config["debug"]:
+        print("SKARF IS IN DEBUG MODE! THIS IS NOT PRODUCTION READY!")
+except KeyError:
+    pass
 app = Flask(__name__)
 
 
 @app.route("/")
 def home():
     global config
-
-    if config["debug"]:
-        print("Reloading Config! (THIS IS BECAUSE DEBUG MODE IS ON)")
-        config = load_config()
-        print("FINISHED RELOADING CONFIG")
-
+    try:
+        if config["debug"]:
+            print("Reloading Config! (THIS IS BECAUSE DEBUG MODE IS ON)")
+            config = load_config()
+            print("FINISHED RELOADING CONFIG")
+    except KeyError:
+        pass
     if config:
         return render_template(
             f"versions/{str(config['version'])}.html",
