@@ -5,7 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ config['name'] }}</title>
+    {% if config['font-awesome']['pro'] %}
+    <link rel="stylesheet" href="{{ config['font-awesome']['pro-url'] }}" />
+    {% else %}
     <link rel="stylesheet" href="/res/css/fontawesome.css" />
+    {% endif %} {% if config['custom-css'] %}
+    <link rel="stylesheet" href="{{ config['custom-css'] }}" />
+    {% endif %}
+
     <link rel="stylesheet" href="res/css/style.css" />
     {% if config['description'] %}
     <meta name="description" content="{{ config['description'] }}" />
@@ -19,6 +26,10 @@
         {% if config['background']['type'] == "color" %}
           background-color: {{ config['background']['content'] }};
         {% endif %}
+        {% if config['background']['type'] == "gradient" %}
+          background: {{ config['background']['content'] }};
+          background: linear-gradient(90deg, {{ config['background']['content'] }} 0%, {{ config['background']['content-2'] }} 100%);
+        {% endif %}
         {% if config['background']['type'] == "image" %}
           background-image: url("{{ config['background']['content'] }}");
         {% endif %}
@@ -26,7 +37,16 @@
       div.container {
         {% if config['glass-card'] %}
           /* From https://css.glass */
+          {% if config['glass'] %}
+          {% if config['glass']['color'] %}
+          background: {{ config['glass']['color'] }} !important;
+
+
+          {% endif %}
+
+          {% endif %}
           background: rgba(255, 255, 255, 0.67);
+
           border-radius: 16px;
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
           backdrop-filter: blur(7.5px);
@@ -64,7 +84,10 @@
       <!--Waffle-->
       <ul class="social-list">
         {% for link in config['links'] %}
-        <li style="background-color: {{ link['color'] }} " class="social-item">
+        <li
+          style="background-color: {{ link['color'] }}; {% if link['text-color'] %}color: {{ link['text-color'] }}{%endif%}"
+          class="social-item"
+        >
           <a href="{{ link['link'] }}">
             {% if link['image']['type'] == "font-awesome" %}
             <i
@@ -83,6 +106,30 @@
         </li>
         {% endfor %}
       </ul>
+      {% if config['mini-links'] %}
+      <ul class="mini-links">
+        {% for link in config['mini-links'] %}
+        <li>
+          <a href="{{ link['link'] }}"
+            >{% if link['image']['type'] == "font-awesome" %}
+            <i
+              class="fa-{{ link['image']['style'] }} fa-{{ link['image']['content'] }}"
+              style="color: {{ link['color'] }}"
+            ></i>
+            {% endif %} {% if link['image']['type'] == "image" %}
+
+            <img
+              src="{{ link['image']['content'] }}"
+              alt="Image"
+              class="smallimage"
+              width="15px"
+            />
+            {% endif %}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
     {% if more['debug'] %}
     <div class="debug">

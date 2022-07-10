@@ -7,18 +7,25 @@ skarf_version = "v0.2 alpha"
 print(f"Skarf {skarf_version}")
 
 print("Loading Config...")
-try:
-    with open("config/config.yml", "r") as f:
-        config = yaml.load(f.read(), Loader=yaml.Loader)
-    print("Loaded YAML")
-except FileNotFoundError:
+
+
+def load_config():
     try:
-        with open("config/config.json", "r") as f:
-            config = json.loads(f.read())
-        print("Loaded JSON")
+        with open("config/config.yml", "r") as f:
+            config = yaml.load(f.read(), Loader=yaml.Loader)
+        print("Loaded YAML")
     except FileNotFoundError:
-        print("Could not find config")
-        config = None
+        try:
+            with open("config/config.json", "r") as f:
+                config = json.loads(f.read())
+            print("Loaded JSON")
+        except FileNotFoundError:
+            print("Could not find config")
+            config = None
+    return config
+
+
+config = load_config()
 
 if config:
     print("Loaded!")
@@ -33,6 +40,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+    global config
+
+    if config['debug'] == True:
+        print("Reloading Config! (THIS IS BECAUSE DEBUG MODE IS ON)")
+        config = load_config()
+        print("FINISHED RELOADING CONFIG")
+
     if config:
         return render_template(f"versions/{str(config['version'])}.html", config=config['settings'], more=config, version=skarf_version)
     else:
