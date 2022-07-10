@@ -1,6 +1,8 @@
 # Skarf
 
-![Build](https://img.shields.io/github/workflow/status/woooferz/skarf/Docker/master)
+![Build](https://img.shields.io/github/workflow/status/woooferz/skarf/Docker/master?style=for-the-badge)
+![Read the Docs](https://img.shields.io/readthedocs/skarf-docs?style=for-the-badge)
+
 
 Self-Hosted Linktree/beacons.ai with easy configuration.
 

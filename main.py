@@ -33,7 +33,7 @@ if config:
 else:
     print("Error while loading config")
 # print(config)
-if config["debug"] is True:
+if config["debug"]:
     print("SKARF IS IN DEBUG MODE! THIS IS NOT PRODUCTION READY!")
 
 app = Flask(__name__)
@@ -43,7 +43,7 @@ app = Flask(__name__)
 def home():
     global config
 
-    if config["debug"] is True:
+    if config["debug"]:
         print("Reloading Config! (THIS IS BECAUSE DEBUG MODE IS ON)")
         config = load_config()
         print("FINISHED RELOADING CONFIG")
