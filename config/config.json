@@ -1,5 +1,6 @@
 {
-  "version": 2,
+  "version": 3,
+  "debug": false,
   "settings": {
     "name": "Person",
     "subtitle": "Some for info",
@@ -7,9 +8,18 @@
     "color": "#6F6F6F",
     "link-color": "#F6F6F6",
     "glass-card": true,
+    "custom-css": false,
+    "font-awesome": {
+      "pro": false,
+      "pro-url": "/idk/here/maybe"
+    },
+    "glass": {
+      "color": "#FFFFFFAA"
+    },
     "background": {
       "type": "color",
-      "content": "#2F2F2F"
+      "content": "#2F2F2F",
+      "content-2": "#FFFFFF"
     },
     "favicon": "/static/favicon.png",
     "description": "Some info in the meta description tag",
@@ -20,17 +30,38 @@
     },
     "links": [
       {
-        "name": "Google",
-        "link": "https://google.com",
+        "name": "Skarf Docs",
+        "link": "https://skarf-docs.readthedocs.io/en/latest/index.html",
         "image": {
           "type": "font-awesome",
-          "style": "brands",
-          "content": "google"
+          "style": "solid",
+          "content": "book"
         },
-        "color": "#454FBF"
+        "color": "#3F3F3F"
       },
       {
         "name": "Skarf Github",
+        "link": "https://github.com/woooferz/skarf",
+        "image": {
+          "type": "font-awesome",
+          "style": "brands",
+          "content": "github"
+        },
+        "color": "#3F3F3F"
+      },
+      {
+        "name": "Support Discord",
+        "link": "https://discord.gg/VnskbWb4Ft",
+        "image": {
+          "type": "font-awesome",
+          "style": "brands",
+          "content": "discord"
+        },
+        "color": "#454FBF"
+      }
+    ],
+    "mini-links": [
+      {
         "link": "https://github.com/woooferz/skarf",
         "image": {
           "type": "font-awesome",
