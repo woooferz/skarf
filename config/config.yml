@@ -21,7 +21,7 @@ settings:
   custom-css: false # OPTIONAL! url to custom css
   kofi:
     status: false # kofi on / off status
-    slug: supportkofi # if your kofi was https://ko-fi.com/supportkofi then you would put 'wooferz'
+    slug: supportkofi # if your kofi was https://ko-fi.com/supportkofi then you would put 'supportkofi'
     text: Support Ko-Fi # the text on the button (Keep under 13 characters as it will add a scroll bar otherwise)
     background-color: '#00b9fe' # background color of button
     text-color: '#ffffff' # text color of button
