@@ -3,7 +3,7 @@ import json
 import yaml
 from flask import Flask, render_template, send_from_directory
 
-skarf_version = "v0.2 alpha"
+skarf_version = "v0.2"
 
 print(f"Skarf {skarf_version}")
 
