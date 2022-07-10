@@ -4,6 +4,7 @@ div.container {
   width: max-content;
   margin: 10px auto;
   border-radius: 10px;
+  overflow: hidden;
   /* From https://css.glass */
   /* background: rgba(255, 255, 255, 0.67);
   border-radius: 16px;
@@ -11,9 +12,25 @@ div.container {
   backdrop-filter: blur(7.5px);
   -webkit-backdrop-filter: blur(7.5px); */
 }
-ul.social-list {
+
+ul.social-list,
+ul.mini-links {
   list-style-type: none;
   padding: 0;
+}
+
+ul.mini-links {
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+
+ul.mini-links > li {
+  display: inline-block;
+  /* float: right; */
+}
+ul.mini-links > li > a > i {
+  font-size: 25px;
 }
 ul.social-list > li.social-item {
   width: 300px;
@@ -62,4 +79,10 @@ body {
 }
 .smallimage {
   border-radius: 50%;
+}
+.debug {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
