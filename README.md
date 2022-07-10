@@ -6,7 +6,7 @@ Self-Hosted Linktree/beacons.ai with easy configuration.
 
 Demo: https://skarfdemo.wooferz.dev/
 
-Docs: https://docs.skarf.wooferz.dev/
+Docs: https://skarf-docs.readthedocs.io/en/latest/index.html
 
 ## Screenshot
 
