@@ -11,7 +11,7 @@
 
 Self-Hosted Linktree/beacons.ai with easy configuration.
 
-[Demo](https://skarfdemo.wooferz.dev/) /  [Docs](ttps://skarf-docs.readthedocs.io/en/latest/index.html) / [Support Discord](https://discord.gg/VnskbWb4Ft)
+[Demo](https://skarfdemo.wooferz.dev/) /  [Docs](https://skarf-docs.readthedocs.io/en/latest/index.html) / [Support Discord](https://discord.gg/VnskbWb4Ft)
 
 ## Screenshot
 
