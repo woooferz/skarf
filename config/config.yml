@@ -1,5 +1,5 @@
-version: 5 # pls no touch this
-debug: false
+version: 6 # pls no touch this
+debug: true
 settings:
   name: "Person" # Main name
   subtitle: "Some for info" # A little text below namwe
@@ -7,8 +7,16 @@ settings:
   verified: false # adds a cool checkmark
   check-color: '#55FF11' # decides the color of checkmark
   color: "#6F6F6F" # The color of the name and subtitle
+  button-border-radius: '15'
   link-color: "#F6F6F6" # The color of the text on the links
-  glass-card: true # If the image, name, subtitle and links should be displayed on a glass-like card
+  card:
+    border-radius: '15'
+    glass: 
+      status: true
+      color: "#FFFFFFAA"
+    solid:
+      status: false
+      color: "#FFFFFF"
   custom-css: false # OPTIONAL! url to custom css
   kofi:
     status: false # kofi on / off status
@@ -19,8 +27,6 @@ settings:
   font-awesome:
     pro: false # if you have pro set to true
     pro-url: "/idk/here/maybe" # if you have pro enter url here, either a local one such as /static/fontawesome-pro.css or an external one such as https://fontawesome.example.com/pro.css (BOTH OF THESE WON'T WORK, GET YOUR OWN LINK)
-  glass:
-    color: "#FFFFFFAA" # color of the glass effect simply remove this if you enjoy the current color
   background: # The background info
     type: color # image or color or gradient Decides what to put as the background
     content: "#2F2F2F" # url to image or a color code (e.g. /static/bg.png) or the first color of a gradient
@@ -38,7 +44,7 @@ settings:
         type: font-awesome
         style: solid
         content: book
-      color: "#3F3F3F" # the background color of the link
+      color: '#3F3F3F' # the background color of the link
     - name: Skarf Github # same as item above
       link: https://github.com/woooferz/skarf
       image:
