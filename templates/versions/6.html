@@ -41,7 +41,7 @@
       }
       {% endif %}
       div.container {
-        border-radius: config['card']['border-radius']px !important;
+        border-radius: {{ config['card']['border-radius'] }}px !important;
         {% if config['card']['glass']['status'] %}
           /* From https://css.glass */
 

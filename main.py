@@ -1,4 +1,6 @@
 import json
+import os
+from distutils.dir_util import copy_tree
 
 import yaml
 from flask import Flask, render_template, send_from_directory
@@ -38,11 +40,39 @@ if config:
 else:
     print("Error while loading config")
 # print(config)
+try:
+    if config:
+        if config['static'] and config['version']:
+            print("Static Mode: ON")
+            from jinja2 import Environment, FileSystemLoader
 
+            file_loader = FileSystemLoader('templates')
+            env = Environment(loader=file_loader)
+
+            template = env.get_template(
+                f"versions/{str(config['version'])}.html")
+
+            output = template.render(config=config["settings"],
+                                     more=config,
+                                     version=skarf_version,)
+            try:
+                with open("build/static.html", "w") as f:
+                    f.write(output)
+            except FileNotFoundError:
+                os.mkdir("build")
+                with open("build/static.html", "w") as f:
+                    f.write(output)
+
+            copy_tree("res", "build/res")
+            copy_tree("static", "build/static")
+            print("Success.\n\nExiting!")
+            exit()
+except KeyError:
+    pass
 app = Flask(__name__)
 
 
-@app.route("/")
+@ app.route("/")
 def home():
     global config
     if config:
@@ -64,12 +94,12 @@ def home():
         return render_template("no_config.html", the_version=skarf_version)
 
 
-@app.route("/static/<path:path>")
+@ app.route("/static/<path:path>")
 def send_static(path):
     return send_from_directory("static/", path)
 
 
-@app.route("/res/<path:path>")
+@ app.route("/res/<path:path>")
 def send_res(path):
     return send_from_directory("res", path)
 

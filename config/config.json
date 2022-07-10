@@ -1,5 +1,6 @@
 {
   "version": 6,
+  "static": false,
   "debug": false,
   "settings": {
     "name": "Person",

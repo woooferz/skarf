@@ -4,3 +4,4 @@ todos.txt
 .DS_Store
 .trunk/logs
 .trunk/out
+build/
