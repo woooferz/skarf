@@ -1,4 +1,5 @@
-version: 2 # pls no touch this
+version: 3 # pls no touch this
+debug: false
 settings:
   name: 'Person' # Main name
   subtitle: 'Some for info' # A little text below namwe

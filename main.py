@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, jsonify, send_from_directory
 import yaml
 import json
 
-skarf_version = "v0.1.3"
+skarf_version = "v0.2 alpha"
 
 print(f"Skarf {skarf_version}")
 
@@ -25,6 +25,8 @@ if config:
 else:
     print("Error while loading config")
 # print(config)
+if config['debug'] == True:
+    print("SKARF IS IN DEBUG MODE! THIS IS NOT PRODUCTION READY!")
 
 app = Flask(__name__)
 
@@ -32,7 +34,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     if config:
-        return render_template(f"versions/{str(config['version'])}.html", config=config['settings'])
+        return render_template(f"versions/{str(config['version'])}.html", config=config['settings'], more=config, version=skarf_version)
     else:
         return render_template("no_config.html", the_version=skarf_version)
 

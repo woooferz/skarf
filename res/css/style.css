@@ -63,3 +63,9 @@ body {
 .smallimage {
   border-radius: 50%;
 }
+.debug {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
