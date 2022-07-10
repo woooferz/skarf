@@ -1,4 +1,4 @@
-version: 6 # pls no touch this
+version: 6
 debug: false
 settings:
   name: "Person" # Main name
