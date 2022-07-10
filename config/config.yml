@@ -1,5 +1,5 @@
 version: 6 # pls no touch this
-debug: true
+debug: false
 settings:
   name: "Person" # Main name
   subtitle: "Some for info" # A little text below namwe
@@ -37,6 +37,8 @@ settings:
     type: font-awesome # image or font-awesome decides how to display avatar
     style: solid # for font-awesome. Decides what style to display the icon
     content: user # font-awesome icon name, or url to image
+  share: true
+  share-color: '#3F3F3F'
   links:
     - name: Skarf Docs # Frienly Name of link
       link: https://skarf-docs.readthedocs.io/en/latest/index.html # The link to the link

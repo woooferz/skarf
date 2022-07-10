@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "debug": false,
   "settings": {
     "name": "Person",
@@ -8,8 +8,19 @@
     "verified": false,
     "check-color": "#55FF11",
     "color": "#6F6F6F",
+    "button-border-radius": "15",
     "link-color": "#F6F6F6",
-    "glass-card": true,
+    "card": {
+      "border-radius": "15",
+      "glass": {
+        "status": true,
+        "color": "#FFFFFFAA"
+      },
+      "solid": {
+        "status": false,
+        "color": "#FFFFFF"
+      }
+    },
     "custom-css": false,
     "kofi": {
       "status": false,
@@ -21,9 +32,6 @@
     "font-awesome": {
       "pro": false,
       "pro-url": "/idk/here/maybe"
-    },
-    "glass": {
-      "color": "#FFFFFFAA"
     },
     "background": {
       "type": "color",
@@ -37,6 +45,8 @@
       "style": "solid",
       "content": "user"
     },
+    "share": true,
+    "share-color": "#3F3F3F",
     "links": [
       {
         "name": "Skarf Docs",
