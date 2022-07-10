@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "debug": false,
   "settings": {
     "name": "Person",
@@ -11,6 +11,13 @@
     "link-color": "#F6F6F6",
     "glass-card": true,
     "custom-css": false,
+    "kofi": {
+      "status": false,
+      "slug": "supportkofi",
+      "text": "Support Ko-Fi",
+      "background-color": "#00b9fe",
+      "text-color": "#ffffff"
+    },
     "font-awesome": {
       "pro": false,
       "pro-url": "/idk/here/maybe"

@@ -1,4 +1,4 @@
-version: 4 # pls no touch this
+version: 5 # pls no touch this
 debug: false
 settings:
   name: "Person" # Main name
@@ -10,6 +10,12 @@ settings:
   link-color: "#F6F6F6" # The color of the text on the links
   glass-card: true # If the image, name, subtitle and links should be displayed on a glass-like card
   custom-css: false # OPTIONAL! url to custom css
+  kofi:
+    status: false # kofi on / off status
+    slug: supportkofi # if your kofi was https://ko-fi.com/supportkofi then you would put 'wooferz'
+    text: Support Ko-Fi # the text on the button (Keep under 13 characters as it will add a scroll bar otherwise)
+    background-color: '#00b9fe' # background color of button
+    text-color: '#ffffff' # text color of button
   font-awesome:
     pro: false # if you have pro set to true
     pro-url: "/idk/here/maybe" # if you have pro enter url here, either a local one such as /static/fontawesome-pro.css or an external one such as https://fontawesome.example.com/pro.css (BOTH OF THESE WON'T WORK, GET YOUR OWN LINK)
