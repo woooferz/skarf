@@ -137,6 +137,12 @@ ul.social-list > li.social-item > a {
   display: block;
   cursor: pointer;
 }
+
+.footer {
+  margin-top: 45px;
+  color: #3f3f3f;
+}
+
 .icon {
   font-size: 100px;
 }
