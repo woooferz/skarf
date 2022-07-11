@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "static": false,
   "debug": false,
   "settings": {
@@ -57,7 +57,8 @@
         "image": {
           "type": "font-awesome",
           "style": "solid",
-          "content": "book"
+          "content": "book",
+          "mode": "next"
         },
         "color": "#3F3F3F"
       },

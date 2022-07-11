@@ -1,4 +1,4 @@
-version: 8 # Sets the engine version
+version: 9 # Sets the engine version
 static: false # This will compile the page into static html, css, images etc. 
 debug: false # This will auto reload your config but will increase server resources so DO NOT USE THIS IN PRODUCTION
 settings:
@@ -49,6 +49,7 @@ settings:
         type: font-awesome
         style: solid
         content: book
+        mode: next # can be left, right, next decides where the icon is if it is an icon
       color: '#3F3F3F' # the background color of the link
     - name: Skarf Github # same as item above
       link: https://github.com/woooferz/skarf
