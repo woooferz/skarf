@@ -1,6 +1,6 @@
-version: 7
-static: false
-debug: false
+version: 7 # Sets the engine version
+static: false # This will compile the page into static html, css, images etc. 
+debug: false # This will auto reload your config but will increase server resources so DO NOT USE THIS IN PRODUCTION
 settings:
   name: "Person" # Main name
   subtitle: "Some for info" # A little text below namwe
