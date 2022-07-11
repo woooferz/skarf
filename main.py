@@ -56,11 +56,11 @@ try:
                                      more=config,
                                      version=skarf_version,)
             try:
-                with open("build/static.html", "w") as f:
+                with open("build/index.html", "w") as f:
                     f.write(output)
             except FileNotFoundError:
                 os.mkdir("build")
-                with open("build/static.html", "w") as f:
+                with open("build/index.html", "w") as f:
                     f.write(output)
 
             copy_tree("res", "build/res")
