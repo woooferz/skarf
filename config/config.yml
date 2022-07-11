@@ -1,9 +1,10 @@
-version: 6
+version: 7
 static: false
 debug: false
 settings:
   name: "Person" # Main name
   subtitle: "Some for info" # A little text below namwe
+  credits: false
   font: Roboto, Arial # The font-family to use for the page
   verified: false # adds a cool checkmark
   check-color: '#55FF11' # decides the color of checkmark

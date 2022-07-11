@@ -5,7 +5,7 @@ from distutils.dir_util import copy_tree
 import yaml
 from flask import Flask, render_template, send_from_directory
 
-skarf_version = "v0.2.3"
+skarf_version = "v0.2.4"
 
 print(f"Skarf {skarf_version}")
 
@@ -25,6 +25,17 @@ def load_config():
         except FileNotFoundError:
             print("Could not find config")
             config = None
+    if config:
+        for i in config['settings']['links']:
+            try:
+                i['copy']
+            except KeyError:
+                i['copy'] = False
+        for i in config['settings']['mini-links']:
+            try:
+                i['copy']
+            except KeyError:
+                i['copy'] = False
     return config
 
 

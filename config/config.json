@@ -1,10 +1,11 @@
 {
-  "version": 6,
+  "version": 7,
   "static": false,
   "debug": false,
   "settings": {
     "name": "Person",
     "subtitle": "Some for info",
+    "credits": false,
     "font": "Roboto, Arial",
     "verified": false,
     "check-color": "#55FF11",
