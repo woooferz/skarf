@@ -1,4 +1,4 @@
-version: 9 # Sets the engine version
+version: 9 # Sets the engine version.
 static: false # This will compile the page into static html, css, images etc. 
 debug: false # This will auto reload your config but will increase server resources so DO NOT USE THIS IN PRODUCTION
 settings:
