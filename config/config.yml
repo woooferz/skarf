@@ -52,6 +52,8 @@ settings:
         content: book
         mode: next # can be left, right, next decides where the icon is if it is an icon
       color: '#3F3F3F' # the background color of the link
+      color-2: '#8F8F8F' # if this exists then it will try to color it gradient
+      color-deg: '45' # this chooses the degree or angle that the gradient will go
     - name: Skarf Github # same as item above
       link: https://github.com/woooferz/skarf
       image:

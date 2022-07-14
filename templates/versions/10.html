@@ -94,7 +94,7 @@
       <ul class="social-list">
         {% for link in config['links'] %}
         <li
-          style="{% if link['color'] %}background-color: {{ link['color'] }}; {% else %}background: none; {% endif%}{% if link['text-color'] %}color: {{ link['text-color'] }};{%endif%}{% if link['border'] %}border: solid {{ link['border'] }}{% if link['border-size'] %} {{ link['border-size'] }}px{% endif %};{%endif%}"
+          style="{% if link['color'] and not link['color-2'] %}background-color: {{ link['color'] }}; {% elif link['color-2'] and link['color'] %}background: linear-gradient({{ link['color-deg'] }}deg, {{ link['color'] }} 0%, {{ link['color-2'] }} 100%);{% else %}background: none; {% endif%}{% if link['text-color'] %}color: {{ link['text-color'] }};{%endif%}{% if link['border'] %}border: solid {{ link['border'] }}{% if link['border-size'] %} {{ link['border-size'] }}px{% endif %};{%endif%}"
           class="social-item"
         >
           <a {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}>

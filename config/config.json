@@ -61,7 +61,9 @@
           "content": "book",
           "mode": "next"
         },
-        "color": "#3F3F3F"
+        "color": "#3F3F3F",
+        "color-2": "#8F8F8F",
+        "color-deg": "45"
       },
       {
         "name": "Skarf Github",
