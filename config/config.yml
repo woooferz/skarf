@@ -1,4 +1,4 @@
-version: 9 # Sets the engine version
+version: 10 # Sets the engine version.
 static: false # This will compile the page into static html, css, images etc. 
 debug: false # This will auto reload your config but will increase server resources so DO NOT USE THIS IN PRODUCTION
 settings:
@@ -6,6 +6,7 @@ settings:
   subtitle: "Some for info" # A little text below namwe
   credits: false
   font: Roboto, Arial # The font-family to use for the page
+  font_style_url: https://fonts.googleapis.com/css2?family=Roboto&display=swap
   footer: Remember to eat your waffles
   verified: false # adds a cool checkmark
   check-color: '#55FF11' # decides the color of checkmark
@@ -51,6 +52,8 @@ settings:
         content: book
         mode: next # can be left, right, next decides where the icon is if it is an icon
       color: '#3F3F3F' # the background color of the link
+      color-2: '#8F8F8F' # if this exists then it will try to color it gradient
+      color-deg: '45' # this chooses the degree or angle that the gradient will go
     - name: Skarf Github # same as item above
       link: https://github.com/woooferz/skarf
       image:
