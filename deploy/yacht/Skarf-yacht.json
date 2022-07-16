@@ -15,16 +15,16 @@
     ],
     "volumes": [
       {
-        "container": "/path/to/config",
-        "bind": "/app/config"
+        "container": "/app/config",
+        "bind": "/path/to/config"
       },
       {
-        "container": "/path/to/static",
-        "bind": "/app/static"
+        "container": "/app/static",
+        "bind": "/path/to/static"
       },
       {
-        "container": "/path/to/build",
-        "bind": "/app/build"
+        "container": "/app/build",
+        "bind": "/path/to/build"
       }
     ],
     "env": [],
