@@ -45,8 +45,23 @@
     "platform": "linux",
     "note": "",
     "restart_policy": "unless-stopped",
-    "ports": [],
-    "volumes": [],
+    "ports": [
+      "8080:80/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/app/config",
+        "bind": "/path/to/config"
+      },
+      {
+        "container": "/app/static",
+        "bind": "/path/to/static"
+      },
+      {
+        "container": "/app/build",
+        "bind": "/path/to/build"
+      }
+    ],
     "env": [],
     "command": [],
     "devices": [],
