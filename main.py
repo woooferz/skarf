@@ -32,11 +32,14 @@ def load_config():
                 i['copy']
             except KeyError:
                 i['copy'] = False
-        for i in config['settings']['mini-links']:
-            try:
-                i['copy']
-            except KeyError:
-                i['copy'] = False
+        try:
+            for i in config['settings']['mini-links']:
+                try:
+                    i['copy']
+                except KeyError:
+                    i['copy'] = False
+        except KeyError:
+            pass
     else:
         try:
             print("Attempting to download example config(s).")
