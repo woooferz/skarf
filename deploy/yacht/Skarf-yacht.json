@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Skarf Stable",
+    "name": "skarf-stable",
+    "image": "wooferz/skarf:master",
+    "description": "This is the stable version of skarf, the awesome self-hosted linktree alternative.",
+    "categories": [
+      "Links"
+    ],
+    "platform": "linux",
+    "note": "",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8080:80/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/app/config",
+        "bind": "/path/to/config"
+      },
+      {
+        "container": "/app/static",
+        "bind": "/path/to/static"
+      },
+      {
+        "container": "/app/build",
+        "bind": "/path/to/build"
+      }
+    ],
+    "env": [],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [],
+    "cap_add": []
+  },
+  {
+    "title": "Skarf Unstable",
+    "name": "skarf-unstable",
+    "image": "wooferz/skarf:dev",
+    "description": "The unstable version of skarf, the awesome linktree alternative.",
+    "categories": [
+      "Links"
+    ],
+    "platform": "linux",
+    "note": "",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8080:80/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/app/config",
+        "bind": "/path/to/config"
+      },
+      {
+        "container": "/app/static",
+        "bind": "/path/to/static"
+      },
+      {
+        "container": "/app/build",
+        "bind": "/path/to/build"
+      }
+    ],
+    "env": [],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [],
+    "cap_add": []
+  }
+]

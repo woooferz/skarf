@@ -15,7 +15,8 @@ Self-Hosted Linktree/beacons.ai with easy configuration.
 
 ## Screenshot
 
-![Screenshot of Skarf](https://i.imgur.com/Gi0RCWr.png)
+![Screenshot of Skarf - 1](https://i.imgur.com/wOaRRhN.png)
+![Screenshot of Skarf - 2](https://i.imgur.com/NJctg6E.png)
 
 ## Installation Guide
 

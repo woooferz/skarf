@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ config['name'] }}</title>
+    {% if config['font-awesome']['pro'] %}
+    <link rel="stylesheet" href="{{ config['font-awesome']['pro-url'] }}" />
+    {% else %}
+    <link rel="stylesheet" href="./res/css/fontawesome.css" />
+    {% endif %} {% if config['custom-css'] %}
+    <link rel="stylesheet" href="{{ config['custom-css'] }}" />
+    {% endif %}
+
+    <link rel="stylesheet" href="./res/css/style.css" />
+    {% if config['description'] %}
+    <meta name="description" content="{{ config['description'] }}" />
+    {% endif %} {% if config['favicon'] %}
+    <link rel="icon" href="{{ config['favicon'] }}" />
+    {% endif %}
+
+    <style>
+      {% if config['font_style_url'] %}
+      @import url('{{ config['font_style_url'] }}');
+      {% endif %}
+      body {
+        font-family: {{ config["font"] }};
+        {% if config['background']['type'] == "color" %}
+          background-color: {{ config['background']['content'] }};
+        {% endif %}
+        {% if config['background']['type'] == "gradient" %}
+          background: {{ config['background']['content'] }};
+          background: linear-gradient(90deg, {{ config['background']['content'] }} 0%, {{ config['background']['content-2'] }} 100%);
+        {% endif %}
+        {% if config['background']['type'] == "image" %}
+          background-image: url("{{ config['background']['content'] }}");
+        {% endif %}
+      }
+      {% if config["button-border-radius"] %}
+      ul.social-list > li.social-item {
+
+        border-radius: {{ config["button-border-radius"] }}px !important;
+      }
+      {% endif %}
+      div.container {
+        border-radius: {{ config['card']['border-radius'] }}px !important;
+        {% if config['card']['glass']['status'] %}
+          /* From https://css.glass */
+
+          background: {{ config['card']['glass']['color'] }};
+
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(7.5px);
+          -webkit-backdrop-filter: blur(7.5px);
+        {% elif config['card']['solid']['status'] %}
+        background: {{ config['card']['solid']['color'] }};
+        {% endif %}
+      }
+      .name, .icon {
+        color: {{ config['color'] }};
+      }
+      ul.social-list > li.social-item {
+        color: {{ config['link-color'] }};
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Version 1
+    <i class="fa fa-cloud"></i><i class="fa-brands fa-discord"></i> -->
+    <div class="container">
+      {% if config['image']['type'] == "font-awesome" %}
+      <i
+        class="fa-{{ config['image']['style'] }} fa-{{ config['image']['content'] }} icon"
+      ></i>
+      {% endif %} {% if config['image']['type'] == "image" %}
+
+      <img
+        src="{{ config['image']['content'] }}"
+        alt="Avatar"
+        class="image"
+        width="200px"
+      />
+      {% endif %}
+      <h1 class="name">
+        {{ config['name'] }} {% if config['verified'] %}<i
+          class="fa-solid fa-circle-check" {% if config['check-color'] %}style="color: {{ config['check-color'] }}"{% endif %}
+        ></i
+        >{% endif %}
+      </h1>
+      <h3 class="subtitle name">{{ config['subtitle'] }}</h3>
+
+      <!--Waffle-->
+      <ul class="social-list">
+        {% for link in config['links'] %}
+        <li
+          style="{% if link['color'] and not link['color-2'] %}background-color: {{ link['color'] }}; {% elif link['color-2'] and link['color'] %}background: linear-gradient({{ link['color-deg'] }}deg, {{ link['color'] }} 0%, {{ link['color-2'] }} 100%);{% else %}background: none; {% endif%}{% if link['text-color'] %}color: {{ link['text-color'] }};{%endif%}{% if link['border'] %}border: solid {{ link['border'] }}{% if link['border-size'] %} {{ link['border-size'] }}px{% endif %};{%endif%}"
+          class="social-item"
+        >
+          <a {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}>
+            {% if link['image']['type'] == "font-awesome" %}
+            <i
+              class="fa-{{ link['image']['style'] }} fa-{{ link['image']['content'] }}" style="{% if link['image']['mode'] == 'left' %}float: left; {% elif link['image']['mode'] == 'right' %}float: right; {% endif %}"
+            ></i>
+            {% endif %} {% if link['image']['type'] == "image" %}
+
+            <img
+              src="{{ link['image']['content'] }}"
+              alt="Image"
+              class="smallimage"
+              width="15px"
+            />
+            {% endif %} {{ link['name'] }} </a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+      {% if config['mini-links'] %}
+      <ul class="mini-links">
+        {% for link in config['mini-links'] %}
+        <li>
+          <a {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}
+            >{% if link['image']['type'] == "font-awesome" %}
+            <i
+              class="fa-{{ link['image']['style'] }} fa-{{ link['image']['content'] }}"
+              style="color: {{ link['color'] }}; "
+            ></i>
+            {% endif %} {% if link['image']['type'] == "image" %}
+
+            <img
+              src="{{ link['image']['content'] }}"
+              alt="Image"
+              class="smallimage"
+              width="15px"
+            />
+            {% endif %}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+       {% if config['share'] %}
+
+    <div class="share" onclick="copy_url()">
+    <i class="fa-solid fa-share" style="color: {{ config['share-color'] }};"></i>
+    </div>
+    {% if config['credits'] %}
+    <div class="powered">Powered by <a href="https://github.com/woooferz/skarf">Skarf</a>!</div>
+    {% endif %}
+    {% if config['footer'] %}
+    <div class="footer" {% if config['credits'] %}style="margin-top: 10px"{% endif %}>{{ config['footer'] }}</div>
+    {% endif %}
+    <script defer> 
+        function fallbackCopyTextToClipboard(text) {
+      var textArea = document.createElement("textarea");
+      textArea.value = text;
+      
+      // Avoid scrolling to bottom
+      textArea.style.top = "0";
+      textArea.style.left = "0";
+      textArea.style.position = "fixed";
+
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Fallback: Copying text command was ' + msg);
+      } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err);
+      }
+
+      document.body.removeChild(textArea);
+    }
+    function snackbar(text) {
+        var x = document.getElementById("snackbar");
+        x.innerHTML = text;
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+    function copyTextToClipboard(text, alert=false) {
+      if (!navigator.clipboard) {
+        fallbackCopyTextToClipboard(text);
+        return;
+      }
+      navigator.clipboard.writeText(text).then(function() {
+        console.log('Async: Copying to clipboard was successful!');
+      }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+      });
+      if (alert) {
+        snackbar(alert)
+      }
+    }
+      function copy_url() {
+        copyTextToClipboard(window.location.href);
+        snackbar("Copied link to clipboard.")
+      }
+    </script>
+    {% endif %}
+    </div>
+   <div id="snackbar">Copied link to clipboard!</div>
+
+
+    {% if config['kofi'] %}
+    {% if config['kofi']['status'] %}
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('{{ config['kofi']['slug'] }}', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': '{{ config['kofi']['text'] }}',
+    'floating-chat.donateButton.background-color': '{{ config['kofi']['background-color'] }}',
+    'floating-chat.donateButton.text-color': '{{ config['kofi']['text-color'] }}'
+  });
+</script>
+{% endif %}
+{% endif %}
+
+    {% if more['debug'] %}
+    <div class="debug">
+      DEBUG MODE! Skarf {{ version }}, Renderer Version {{ more['version'] }}
+    </div>
+    {% endif %}
+  </body>
+</html>

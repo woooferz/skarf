@@ -4,8 +4,9 @@ from distutils.dir_util import copy_tree
 
 import yaml
 from flask import Flask, render_template, send_from_directory
+import requests
 
-skarf_version = "v0.2.4"
+skarf_version = "v0.2.6"
 
 print(f"Skarf {skarf_version}")
 
@@ -31,11 +32,46 @@ def load_config():
                 i['copy']
             except KeyError:
                 i['copy'] = False
-        for i in config['settings']['mini-links']:
-            try:
-                i['copy']
-            except KeyError:
-                i['copy'] = False
+        try:
+            for i in config['settings']['mini-links']:
+                try:
+                    i['copy']
+                except KeyError:
+                    i['copy'] = False
+        except KeyError:
+            pass
+    else:
+        try:
+            print("Attempting to download example config(s).")
+            example_yml_t = ""
+            example_json_t = ""
+            print("Starting YAML Download")
+
+            example_yml = requests.get(
+                "https://raw.githubusercontent.com/woooferz/skarf/master/config/config.yml", timeout=3)
+            example_yml_t = ""
+            example_json_t = ""
+            if example_yml.status_code >= 200 and example_yml.status_code < 300:
+                example_yml_t = example_yml.text
+            else:
+                return None
+            with open("config/config.yml", "w") as f:
+                f.write(example_yml_t)
+            print("Example YAML Downloaded!")
+            print("Starting YAML Download")
+            example_json = requests.get(
+                "https://raw.githubusercontent.com/woooferz/skarf/master/config/config.json", timeout=3)
+            if example_json.status_code >= 200 and example_json.status_code < 300:
+                example_json_t = example_json.text
+            else:
+                return None
+            with open("config/config.json", "w") as f:
+                f.write(example_json_t)
+            print("Example JSON Downloaded!")
+            config = load_config()
+        except requests.ConnectionError:
+            print("Failed.")
+
     return config
 
 

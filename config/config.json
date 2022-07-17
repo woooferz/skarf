@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 10,
   "static": false,
   "debug": false,
   "settings": {
@@ -7,6 +7,7 @@
     "subtitle": "Some for info",
     "credits": false,
     "font": "Roboto, Arial",
+    "font_style_url": "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
     "footer": "Remember to eat your waffles",
     "verified": false,
     "check-color": "#55FF11",
@@ -57,9 +58,12 @@
         "image": {
           "type": "font-awesome",
           "style": "solid",
-          "content": "book"
+          "content": "book",
+          "mode": "next"
         },
-        "color": "#3F3F3F"
+        "color": "#3F3F3F",
+        "color-2": "#8F8F8F",
+        "color-deg": "45"
       },
       {
         "name": "Skarf Github",
