@@ -37,6 +37,11 @@
           background-image: url("{{ config['background']['content'] }}");
         {% endif %}
       }
+      {% if config['header']['avatar']['border-radius'] %}
+      .image {
+        border-radius: {{ config['header']['avatar']['border-radius'] }}px !important;
+      }
+      {% endif %}
       {% if config["card"]["links"]["border-radius"] %}
       ul.social-list > li.social-item {
 

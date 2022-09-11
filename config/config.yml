@@ -19,8 +19,7 @@ settings:
     font-url: https://fonts.googleapis.com/css2?family=Roboto&display=swap
     custom-css: false
     favicon: /static/favicon.png
-    meta-description: Some info in the meta description tag
-    
+    meta-description: Some info in the meta description tag 
     font-awesome:
       pro: false
       pro-url: 'https://example.com/fontawesomepro.css'
@@ -35,6 +34,7 @@ settings:
       type: font-awesome
       style: solid
       content: user
+      border-radius: '100'
   body:
     links:
       - name: Skarf Docs # Frienly Name of link
