@@ -85,6 +85,9 @@
         alt="Avatar"
         class="image"
         width="200px"
+        {% if config['header']['avatar']['border']['status'] %}
+        style="border: solid {{ config['header']['avatar']['border']['size'] }}px {{ config['header']['avatar']['border']['color'] }}"
+        {% endif %}
       />
       {% endif %}
       <h1 class="name">
@@ -93,8 +96,9 @@
         ></i
         >{% endif %}
       </h1>
+      {% if config['header']['subtitle'] %}
       <h3 class="subtitle name">{{ config['header']['subtitle'] }}</h3>
-
+      {% endif %}
       <!--Waffle-->
       <ul class="social-list">
         {% for link in config['body']['links'] %}

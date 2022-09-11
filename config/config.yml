@@ -35,6 +35,10 @@ settings:
       style: solid
       content: user
       border-radius: '100'
+      border:
+        status: true
+        color: '#3f3f3f'
+        size: '2'
   body:
     links:
       - name: Heading 1
