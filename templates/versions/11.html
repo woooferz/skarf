@@ -138,7 +138,10 @@
       {% if config['footer']['mini-links'] %}
       <ul class="mini-links">
         {% for link in config['footer']['mini-links'] %}
-        <li>
+        <li
+        
+        style="{% if link['background-color'] %}background-color: {{ link['background-color'] }}; border-radius: 50%;{%endif%} padding: 5px;"
+        >
           <a {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}
             >{% if link['image']['type'] == "font-awesome" %}
             <i

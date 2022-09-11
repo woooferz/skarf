@@ -82,7 +82,8 @@ settings:
           type: font-awesome
           style: brands
           content: github
-        color: "#3F3F3F"
+        background-color: '#3f3f3f'
+        color: '#ffffff'
   integrations:
     kofi:
       status: false

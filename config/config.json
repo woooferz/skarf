@@ -1,7 +1,7 @@
 {
   "version": 11,
   "static": false,
-  "debug": true,
+  "debug": false,
   "settings": {
     "credits": false,
     "card": {
@@ -41,11 +41,24 @@
       "avatar": {
         "type": "font-awesome",
         "style": "solid",
-        "content": "user"
+        "content": "user",
+        "border-radius": "100",
+        "border": {
+          "status": true,
+          "color": "#3f3f3f",
+          "size": "2"
+        }
       }
     },
     "body": {
       "links": [
+        {
+          "name": "Heading 1",
+          "heading": true,
+          "text-color": "#2f2f2f",
+          "text-size": "15",
+          "link-underline": false
+        },
         {
           "name": "Skarf Docs",
           "link": "https://skarf-docs.readthedocs.io/en/latest/index.html",
@@ -96,7 +109,8 @@
             "style": "brands",
             "content": "github"
           },
-          "color": "#3F3F3F"
+          "background-color": "#3f3f3f",
+          "color": "#ffffff"
         }
       ]
     },
