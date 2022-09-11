@@ -98,6 +98,12 @@ ul.mini-links {
   padding: 0;
 }
 
+.ul.social-list > li {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
 ul.mini-links {
   float: right;
   padding: 0;

@@ -6,14 +6,27 @@ import yaml
 from flask import Flask, render_template, send_from_directory
 import requests
 
-skarf_version = "v0.2.6"
+skarf_version = "v0.3-beta.2"
 
 print(f"Skarf {skarf_version}")
 
 print("Loading Config...")
 
+use_config_file = os.getenv("USE_CONFIG_FILE", "TRUE")
+
 
 def load_config():
+
+    if use_config_file.lower() == "false":
+        # do not use config file
+        config_env = os.getenv("CONFIG_JSON")
+        if config_env:
+            config_env_processed = json.loads(config_env)
+            print("Loaded JSON: ENV Edition")
+            return config_env_processed
+        else:
+            print("Failed to load JSON: ENV Edition")
+            exit(1)
     try:
         with open("config/config.yml", "r") as f:
             config = yaml.load(f.read(), Loader=yaml.Loader)
