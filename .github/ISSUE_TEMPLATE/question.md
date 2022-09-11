@@ -1,6 +1,6 @@
 ---
 name: Question
-about: I question you want answered
+about: A question you want answered
 title: "[QUESTION]"
 labels: question
 assignees: woooferz
