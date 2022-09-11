@@ -39,7 +39,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           
-      - name: Push To DockerHub
+      - name: Push To GHCR
         id: push-to-ghcr
         uses: redhat-actions/push-to-registry@v2
         with:
