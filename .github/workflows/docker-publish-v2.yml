@@ -4,11 +4,6 @@ on:
   push: 
     branches: ['master', 'dev']
       
-env:
-  IMAGE_NAME: test-multi-arch
-  IMAGE_TAG: latest
-  IMAGE_REGISTRY: quay.io
-  IMAGE_NAMESPACE: mayurwaghmode111
 
 jobs:
   build:
@@ -30,7 +25,7 @@ jobs:
         with:
           image: skarf
           tags: ${{ steps.extract_branch.outputs.branch }}
-          archs: amd64, ppc64le, s390x, arm64
+          archs: amd64, arm64
           dockerfiles: |
             ./Dockerfile
             
