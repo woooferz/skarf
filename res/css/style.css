@@ -136,7 +136,7 @@ ul.social-list > li.social-item {
 
   border-radius: 15px;
 }
-ul.social-list > li.social-item > a {
+ul.social-list > li.social-item > a.social-link-link {
   color: inherit;
   text-decoration: none;
   padding: 15px;
@@ -189,4 +189,11 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+a.heading-link {
+  color: inherit;
+}
+
+a.heading-link {
+  text-decoration: none;
 }

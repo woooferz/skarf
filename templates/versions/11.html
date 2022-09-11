@@ -98,11 +98,21 @@
       <!--Waffle-->
       <ul class="social-list">
         {% for link in config['body']['links'] %}
+        {% if link['heading'] %}
+        <li class="social-item" style="color: {{ link['text-color'] }}; {% if link['text-size'] %}font-size: {{ link['text-size'] }}px;{%endif%}" >
+        {% if link['link'] %}
+        <a href="{{ link['link'] }}" class="heading-link" {% if link['underline']%}style="text-decoration: underline;"{% endif%}>
+        {{ link['name'] }}</a>
+        {% else %}
+        {{ link['name']}}
+        {% endif %}
+        </li>
+        {% else %}
         <li
           style="{% if link['color'] and not link['color-2'] %}background-color: {{ link['color'] }}; {% elif link['color-2'] and link['color'] %}background: linear-gradient({{ link['color-deg'] }}deg, {{ link['color'] }} 0%, {{ link['color-2'] }} 100%);{% else %}background: none; {% endif%}{% if link['text-color'] %}color: {{ link['text-color'] }};{%endif%}{% if link['border'] %}border: solid {{ link['border'] }}{% if link['border-size'] %} {{ link['border-size'] }}px{% endif %};{%endif%}"
           class="social-item"
         >
-          <a {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}>
+          <a class="social-link-link" {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}>
             {% if link['image']['type'] == "font-awesome" %}
             <i
               class="fa-{{ link['image']['style'] }} fa-{{ link['image']['content'] }}" style="{% if link['image']['mode'] == 'left' %}float: left; {% elif link['image']['mode'] == 'right' %}float: right; {% endif %}"
@@ -118,6 +128,7 @@
             {% endif %} <span>{{ link['name'] }}</span> </a
           >
         </li>
+        {% endif %}
         {% endfor %}
       </ul>
       {% if config['footer']['mini-links'] %}

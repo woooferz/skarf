@@ -1,6 +1,6 @@
 version: 11
 static: false
-debug: true
+debug: false
 settings:
   credits: false
   card:
@@ -37,6 +37,11 @@ settings:
       border-radius: '100'
   body:
     links:
+      - name: Heading 1
+        heading: true
+        text-color: '#2f2f2f'
+        text-size: '15'
+        link-underline: false
       - name: Skarf Docs # Frienly Name of link
         link: https://skarf-docs.readthedocs.io/en/latest/index.html # The link to the link
         image: # same as the 'image' item above
