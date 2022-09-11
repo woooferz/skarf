@@ -5,46 +5,46 @@ settings:
   credits: false
   card:
     border-radius: 15
-    glass: 
+    glass:
       status: true
-      color: '#FFFFFFAA'
+      color: "#FFFFFFAA"
     solid:
       status: false
-      color: '#FFFFFF'
+      color: "#FFFFFF"
     links:
-      border-radius: '15'
-      default-text-color: '#F6F6F6'
+      border-radius: "15"
+      default-text-color: "#F6F6F6"
   global:
     font: Roboto, Arial
     font-url: https://fonts.googleapis.com/css2?family=Roboto&display=swap
     custom-css: false
     favicon: /static/favicon.png
-    meta-description: Some info in the meta description tag 
+    meta-description: Some info in the meta description tag
     font-awesome:
       pro: false
-      pro-url: 'https://example.com/fontawesomepro.css'
+      pro-url: "https://example.com/fontawesomepro.css"
   header:
     title: Person
     subtitle: Some info
-    color: '#6f6f6f'
+    color: "#6f6f6f"
     checkmark:
       status: false
-      color: '#55FF11'
+      color: "#55FF11"
     avatar:
       type: font-awesome
       style: solid
       content: user
-      border-radius: '100'
+      border-radius: "100"
       border:
         status: true
-        color: '#3f3f3f'
-        size: '2'
+        color: "#3f3f3f"
+        size: "2"
   body:
     links:
       - name: Heading 1
         heading: true
-        text-color: '#2f2f2f'
-        text-size: '15'
+        text-color: "#2f2f2f"
+        text-size: "15"
         link-underline: false
       - name: Skarf Docs # Frienly Name of link
         link: https://skarf-docs.readthedocs.io/en/latest/index.html # The link to the link
@@ -53,9 +53,9 @@ settings:
           style: solid
           content: book
           mode: next # can be left, right, next decides where the icon is if it is an icon
-        color: '#3F3F3F' # the background color of the link
-        color-2: '#8F8F8F' # if this exists then it will try to color it gradient
-        color-deg: '45' # this chooses the degree or angle that the gradient will go
+        color: "#3F3F3F" # the background color of the link
+        color-2: "#8F8F8F" # if this exists then it will try to color it gradient
+        color-deg: "45" # this chooses the degree or angle that the gradient will go
       - name: Skarf Github # same as item above
         link: https://github.com/woooferz/skarf
         image:
@@ -72,25 +72,25 @@ settings:
         color: "#454FBF"
   footer:
     text: Remember to eat your waffles
-    color: '#3f3f3f'
+    color: "#3f3f3f"
     share:
       status: true
-      color: '#3f3f3f'
+      color: "#3f3f3f"
     mini-links:
       - link: https://github.com/woooferz/skarf # Link to the service
         image: # same as the 'image' item above
           type: font-awesome
           style: brands
           content: github
-        background-color: '#3f3f3f'
-        color: '#ffffff'
+        background-color: "#3f3f3f"
+        color: "#ffffff"
   integrations:
     kofi:
       status: false
       slug: supportkofi
       text: Support Ko-Fi
-      background-color: '#00b9fe'
-      text-color: '#ffffff'
+      background-color: "#00b9fe"
+      text-color: "#ffffff"
   background:
     type: color
     content: "#2F2F2F"

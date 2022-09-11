@@ -2,9 +2,9 @@ import json
 import os
 from distutils.dir_util import copy_tree
 
+import requests
 import yaml
 from flask import Flask, render_template, send_from_directory
-import requests
 
 skarf_version = "v0.3-beta.5"
 
@@ -40,17 +40,17 @@ def load_config():
             print("Could not find config")
             config = None
     if config:
-        for i in config['settings']['body']['links']:
+        for i in config["settings"]["body"]["links"]:
             try:
-                i['copy']
+                i["copy"]
             except KeyError:
-                i['copy'] = False
+                i["copy"] = False
         try:
-            for i in config['settings']['footer']['mini-links']:
+            for i in config["settings"]["footer"]["mini-links"]:
                 try:
-                    i['copy']
+                    i["copy"]
                 except KeyError:
-                    i['copy'] = False
+                    i["copy"] = False
         except KeyError:
             pass
     else:
@@ -61,7 +61,9 @@ def load_config():
             print("Starting YAML Download")
 
             example_yml = requests.get(
-                "https://raw.githubusercontent.com/woooferz/skarf/master/config/config.yml", timeout=3)
+                "https://raw.githubusercontent.com/woooferz/skarf/master/config/config.yml",
+                timeout=3,
+            )
             example_yml_t = ""
             example_json_t = ""
             if example_yml.status_code >= 200 and example_yml.status_code < 300:
@@ -73,7 +75,9 @@ def load_config():
             print("Example YAML Downloaded!")
             print("Starting YAML Download")
             example_json = requests.get(
-                "https://raw.githubusercontent.com/woooferz/skarf/master/config/config.json", timeout=3)
+                "https://raw.githubusercontent.com/woooferz/skarf/master/config/config.json",
+                timeout=3,
+            )
             if example_json.status_code >= 200 and example_json.status_code < 300:
                 example_json_t = example_json.text
             else:
@@ -102,19 +106,20 @@ else:
 # print(config)
 try:
     if config:
-        if config['static'] and config['version']:
+        if config["static"] and config["version"]:
             print("Static Mode: ON")
             from jinja2 import Environment, FileSystemLoader
 
-            file_loader = FileSystemLoader('templates')
+            file_loader = FileSystemLoader("templates")
             env = Environment(loader=file_loader)
 
-            template = env.get_template(
-                f"versions/{str(config['version'])}.html")
+            template = env.get_template(f"versions/{str(config['version'])}.html")
 
-            output = template.render(config=config["settings"],
-                                     more=config,
-                                     version=skarf_version,)
+            output = template.render(
+                config=config["settings"],
+                more=config,
+                version=skarf_version,
+            )
             try:
                 with open("build/index.html", "w") as f:
                     f.write(output)
@@ -132,7 +137,7 @@ except KeyError:
 app = Flask(__name__)
 
 
-@ app.route("/")
+@app.route("/")
 def home():
     global config
     if config:
@@ -154,12 +159,12 @@ def home():
         return render_template("no_config.html", the_version=skarf_version)
 
 
-@ app.route("/static/<path:path>")
+@app.route("/static/<path:path>")
 def send_static(path):
     return send_from_directory("static/", path)
 
 
-@ app.route("/res/<path:path>")
+@app.route("/res/<path:path>")
 def send_res(path):
     return send_from_directory("res", path)
 
