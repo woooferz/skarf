@@ -27,13 +27,13 @@ def load_config():
             print("Could not find config")
             config = None
     if config:
-        for i in config['settings']['links']:
+        for i in config['settings']['body']['links']:
             try:
                 i['copy']
             except KeyError:
                 i['copy'] = False
         try:
-            for i in config['settings']['mini-links']:
+            for i in config['settings']['footer']['mini-links']:
                 try:
                     i['copy']
                 except KeyError:

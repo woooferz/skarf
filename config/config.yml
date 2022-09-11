@@ -1,78 +1,87 @@
-version: 10 # Sets the engine version.
-static: false # This will compile the page into static html, css, images etc. 
-debug: false # This will auto reload your config but will increase server resources so DO NOT USE THIS IN PRODUCTION
+version: 11
+static: false
+debug: true
 settings:
-  name: "Person" # Main name
-  subtitle: "Some for info" # A little text below namwe
   credits: false
-  font: Roboto, Arial # The font-family to use for the page
-  font_style_url: https://fonts.googleapis.com/css2?family=Roboto&display=swap
-  footer: Remember to eat your waffles
-  verified: false # adds a cool checkmark
-  check-color: '#55FF11' # decides the color of checkmark
-  color: "#6F6F6F" # The color of the name and subtitle
-  button-border-radius: '15'
-  link-color: "#F6F6F6" # The color of the text on the links
   card:
-    border-radius: '15'
+    border-radius: 15
     glass: 
       status: true
-      color: "#FFFFFFAA"
+      color: '#FFFFFFAA'
     solid:
       status: false
-      color: "#FFFFFF"
-  custom-css: false # OPTIONAL! url to custom css
-  kofi:
-    status: false # kofi on / off status
-    slug: supportkofi # if your kofi was https://ko-fi.com/supportkofi then you would put 'supportkofi'
-    text: Support Ko-Fi # the text on the button (Keep under 13 characters as it will add a scroll bar otherwise)
-    background-color: '#00b9fe' # background color of button
-    text-color: '#ffffff' # text color of button
-  font-awesome:
-    pro: false # if you have pro set to true
-    pro-url: "/idk/here/maybe" # if you have pro enter url here, either a local one such as /static/fontawesome-pro.css or an external one such as https://fontawesome.example.com/pro.css (BOTH OF THESE WON'T WORK, GET YOUR OWN LINK)
-  background: # The background info
-    type: color # image or color or gradient Decides what to put as the background
-    content: "#2F2F2F" # url to image or a color code (e.g. /static/bg.png) or the first color of a gradient
-    content-2: "#FFFFFF" # only used when there is a gradient, the second color of gradient
-  favicon: /static/favicon.png # If you want a favicon
-  description: Some info in the meta description tag # If you want a meta description
-  image:
-    type: font-awesome # image or font-awesome decides how to display avatar
-    style: solid # for font-awesome. Decides what style to display the icon
-    content: user # font-awesome icon name, or url to image
-  share: true
-  share-color: '#3F3F3F'
-  links:
-    - name: Skarf Docs # Frienly Name of link
-      link: https://skarf-docs.readthedocs.io/en/latest/index.html # The link to the link
-      image: # same as the 'image' item above
-        type: font-awesome
-        style: solid
-        content: book
-        mode: next # can be left, right, next decides where the icon is if it is an icon
-      color: '#3F3F3F' # the background color of the link
-      color-2: '#8F8F8F' # if this exists then it will try to color it gradient
-      color-deg: '45' # this chooses the degree or angle that the gradient will go
-    - name: Skarf Github # same as item above
-      link: https://github.com/woooferz/skarf
-      image:
-        type: font-awesome
-        style: brands
-        content: github
-      color: "#3F3F3F"
-    - name: Support Discord
-      link: https://discord.gg/VnskbWb4Ft
-      image:
-        type: font-awesome
-        style: brands
-        content: discord
-      color: "#454FBF"
-  mini-links: # different from 'links' as it is only an image/icon with a link. AKA no text.
-    - link: https://github.com/woooferz/skarf # Link to the service
-      image: # same as the 'image' item above
-        type: font-awesome
-        style: brands
-        content: github
-      color: "#3F3F3F" # color of it
-
+      color: '#FFFFFF'
+    links:
+      border-radius: '15'
+      default-text-color: '#F6F6F6'
+  global:
+    font: Roboto, Arial
+    font-url: https://fonts.googleapis.com/css2?family=Roboto&display=swap
+    custom-css: false
+    favicon: /static/favicon.png
+    meta-description: Some info in the meta description tag
+    
+    font-awesome:
+      pro: false
+      pro-url: 'https://example.com/fontawesomepro.css'
+  header:
+    title: Person
+    subtitle: Some info
+    color: '#6f6f6f'
+    checkmark:
+      status: false
+      color: '#55FF11'
+    avatar:
+      type: font-awesome
+      style: solid
+      content: user
+  body:
+    links:
+      - name: Skarf Docs # Frienly Name of link
+        link: https://skarf-docs.readthedocs.io/en/latest/index.html # The link to the link
+        image: # same as the 'image' item above
+          type: font-awesome
+          style: solid
+          content: book
+          mode: next # can be left, right, next decides where the icon is if it is an icon
+        color: '#3F3F3F' # the background color of the link
+        color-2: '#8F8F8F' # if this exists then it will try to color it gradient
+        color-deg: '45' # this chooses the degree or angle that the gradient will go
+      - name: Skarf Github # same as item above
+        link: https://github.com/woooferz/skarf
+        image:
+          type: font-awesome
+          style: brands
+          content: github
+        color: "#3F3F3F"
+      - name: Support Discord
+        link: https://discord.gg/VnskbWb4Ft
+        image:
+          type: font-awesome
+          style: brands
+          content: discord
+        color: "#454FBF"
+  footer:
+    text: Remember to eat your waffles
+    color: '#3f3f3f'
+    share:
+      status: true
+      color: '#3f3f3f'
+    mini-links:
+      - link: https://github.com/woooferz/skarf # Link to the service
+        image: # same as the 'image' item above
+          type: font-awesome
+          style: brands
+          content: github
+        color: "#3F3F3F"
+  integrations:
+    kofi:
+      status: false
+      slug: supportkofi
+      text: Support Ko-Fi
+      background-color: '#00b9fe'
+      text-color: '#ffffff'
+  background:
+    type: color
+    content: "#2F2F2F"
+    content-2: "#FFFFFF"
