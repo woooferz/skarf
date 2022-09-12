@@ -113,7 +113,8 @@ try:
             file_loader = FileSystemLoader("templates")
             env = Environment(loader=file_loader)
 
-            template = env.get_template(f"versions/{str(config['version'])}.html")
+            template = env.get_template(
+                f"versions/{str(config['version'])}.html")
 
             output = template.render(
                 config=config["settings"],
@@ -134,6 +135,11 @@ try:
             exit()
 except KeyError:
     pass
+
+if not os.path.exists(f"templates/versions/{config['version']}.html"):
+    print("Invalid Version!")
+    print("The version you used does not exist in this skarf instance. This might be because you have not updated your skarf instance to the latest version.")
+    exit(1)
 app = Flask(__name__)
 
 
