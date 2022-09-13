@@ -6,7 +6,7 @@ import requests
 import yaml
 from flask import Flask, render_template, send_from_directory
 
-skarf_version = "v0.3-beta.5"
+skarf_version = "v0.3-beta.6"
 
 print(f"Skarf {skarf_version}")
 
