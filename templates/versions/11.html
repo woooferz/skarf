@@ -116,7 +116,11 @@
           style="{% if link['color'] and not link['color-2'] %}background-color: {{ link['color'] }}; {% elif link['color-2'] and link['color'] %}background: linear-gradient({{ link['color-deg'] }}deg, {{ link['color'] }} 0%, {{ link['color-2'] }} 100%);{% else %}background: none; {% endif%}{% if link['text-color'] %}color: {{ link['text-color'] }};{%endif%}{% if link['border'] %}border: solid {{ link['border'] }}{% if link['border-size'] %} {{ link['border-size'] }}px{% endif %};{%endif%}"
           class="social-item"
         >
-          <a class="social-link-link" {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}>
+          <a 
+          {% if link['link-mode'] == "new" %}
+          target="_blank"
+          {% endif %}
+          class="social-link-link" {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}>
             {% if link['image']['type'] == "font-awesome" %}
             <i
               class="fa-{{ link['image']['style'] }} fa-{{ link['image']['content'] }}" style="{% if link['image']['mode'] == 'left' %}float: left; {% elif link['image']['mode'] == 'right' %}float: right; {% endif %}"
@@ -142,7 +146,11 @@
         
         style="{% if link['background-color'] %}background-color: {{ link['background-color'] }}; border-radius: 50%;{%endif%} padding: 5px;"
         >
-          <a {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}
+          <a 
+          {% if link['link-mode'] == "new" %}
+          target="_blank"
+          {% endif %}
+          {% if link['copy'] == False or link['copy'] == None  %}href="{{ link['link'] }}" {% else %}onclick="copyTextToClipboard('{{ link['link' ]}}', 'Copied text to clipboard.')"{% endif %}
             >{% if link['image']['type'] == "font-awesome" %}
             <i
               class="fa-{{ link['image']['style'] }} fa-{{ link['image']['content'] }}"

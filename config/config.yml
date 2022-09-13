@@ -48,6 +48,7 @@ settings:
         link-underline: false
       - name: Skarf Docs # Frienly Name of link
         link: https://skarf-docs.readthedocs.io/en/latest/index.html # The link to the link
+        link-mode: new
         image: # same as the 'image' item above
           type: font-awesome
           style: solid
@@ -84,6 +85,8 @@ settings:
           content: github
         background-color: "#3f3f3f"
         color: "#ffffff"
+        link-mode: new
+
   integrations:
     kofi:
       status: false
