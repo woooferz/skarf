@@ -38,7 +38,7 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: skarf
-          tags: ${{ steps.extract_branch.outputs.branch }}
+          tags: ${{ steps.meta.outputs.tags }}
           archs: amd64, arm64
           dockerfiles: |
             ./Dockerfile
