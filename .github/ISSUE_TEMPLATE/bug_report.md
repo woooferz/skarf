@@ -7,30 +7,4 @@ assignees: woooferz
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
-
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Computer (please complete the following information):**
- - OS: [e.g. Ubuntu]
- - Browser [e.g. chrome]
- - Version [e.g. 22.04]
-
-**Checklist**:
-- [ ] I have made sure this is not a duplicate and there is no pull request which fixes
-- [ ] I have made sure I am using the latest version of Skarf
-
-**Additional context**
-Add any other context about the problem here.
+<Put your bug report here. Please include details, and tell me how to reproduce the bug.>
