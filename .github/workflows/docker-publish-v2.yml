@@ -3,7 +3,8 @@ name: Docker V2
 on:
   push: 
     branches: ['master', 'dev']
-      
+    tags:
+      -'v*'
 
 jobs:
   build:
@@ -15,6 +16,19 @@ jobs:
         
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
+      -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            ghcr.io/woooferz/skarf
+            wooferz/skarf
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
