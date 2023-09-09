@@ -16,7 +16,7 @@
 
 .powered {
   color: #3f3f3f;
-  margin-top: 50px;
+  clear: both;
 }
 .powered a {
   color: #5f5f5f;
@@ -145,7 +145,7 @@ ul.social-list > li.social-item > a.social-link-link {
 }
 
 .footer {
-  margin-top: 52px;
+  clear: both;
   color: #3f3f3f;
 }
 

@@ -1,6 +1,6 @@
 version: 11
 static: false
-debug: false
+debug: true
 settings:
   credits: false
   card:
@@ -45,7 +45,6 @@ settings:
         heading: true
         text-color: "#2f2f2f"
         text-size: "15"
-        link-underline: false
       - name: Skarf Docs # Frienly Name of link
         link: https://skarf-docs.readthedocs.io/en/latest/index.html # The link to the link
         link-mode: new
@@ -57,6 +56,7 @@ settings:
         color: "#3F3F3F" # the background color of the link
         color-2: "#8F8F8F" # if this exists then it will try to color it gradient
         color-deg: "45" # this chooses the degree or angle that the gradient will go
+        relme: true
       - name: Skarf Github # same as item above
         link: https://github.com/woooferz/skarf
         image:
@@ -64,6 +64,10 @@ settings:
           style: brands
           content: github
         color: "#3F3F3F"
+      - name: Heading 2
+        heading: true
+        text-color: "#2f2f2f"
+        text-size: "15"
       - name: Support Discord
         link: https://discord.gg/VnskbWb4Ft
         image:
@@ -86,6 +90,7 @@ settings:
         background-color: "#3f3f3f"
         color: "#ffffff"
         link-mode: new
+        relme: true
 
   integrations:
     kofi:

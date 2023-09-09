@@ -117,6 +117,9 @@
           class="social-item"
         >
           <a 
+          {% if link['relme'] == True %}
+          rel="me"
+          {% endif %}
           {% if link['link-mode'] == "new" %}
           target="_blank"
           {% endif %}
@@ -145,8 +148,11 @@
         <li
         
         style="{% if link['background-color'] %}background-color: {{ link['background-color'] }}; border-radius: 50%;{%endif%} padding: 5px;"
-        >
+        > 
           <a 
+          {% if link['relme'] == True %}
+            rel="me"
+          {% endif %}
           {% if link['link-mode'] == "new" %}
           target="_blank"
           {% endif %}
@@ -179,7 +185,7 @@
     <div class="powered">Powered by <a href="https://github.com/woooferz/skarf">Skarf</a>!</div>
     {% endif %}
     {% if config['footer']['text'] %}
-    <div class="footer" style="color: {{ config['footer']['color'] }};" {% if config['credits'] %}style="margin-top: 10px"{% endif %}>{{ config['footer']['text'] }}</div>
+    <div class="footer" style="color: {{ config['footer']['color'] }};">{{ config['footer']['text'] }}</div>
     {% endif %}
     <script defer> 
         function fallbackCopyTextToClipboard(text) {
