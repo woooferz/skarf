@@ -62,6 +62,16 @@
         background: {{ config['card']['solid']['color'] }};
         {% endif %}
       }
+      #container {
+        {% if config['card']['center-vertically'] == true %}
+          position: absolute;
+          margin: 0;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        {% endif %}
+      }
       .name, .icon {
         color: {{ config["header"]['color'] }};
       }
@@ -73,7 +83,7 @@
   <body>
     <!-- Version 1
     <i class="fa fa-cloud"></i><i class="fa-brands fa-discord"></i> -->
-    <div class="container">
+    <div class="container" id="container">
       {% if config['header']['avatar']['type'] == "font-awesome" %}
       <i
         class="fa-{{ config['header']['avatar']['style'] }} fa-{{ config['header']['avatar']['content'] }} icon"

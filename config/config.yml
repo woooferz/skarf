@@ -5,6 +5,7 @@ settings:
   credits: false
   card:
     border-radius: 15
+    center-vertically: false
     glass:
       status: true
       color: "#FFFFFFAA"
