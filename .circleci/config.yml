@@ -21,7 +21,9 @@ jobs:
           name: Setup Versioning
           command: |
             pip3 install shyaml
-            export VERSION="$(cat info.yml | shyaml get-value version)"
+            V="$(cat info.yml | shyaml get-value version)"
+            echo "export VERSION=$V" >> "$BASH_ENV"
+            echo $VERSION
       - run:
           name: Build and Push application Docker image
           command: |
