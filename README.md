@@ -1,4 +1,6 @@
 # Skarf
+## NOTE: 
+builds will no longer be available on ghcr.io, all builds will be on [Docker Hub](https://hub.docker.com/repository/docker/wooferz/skarf/general)
 
 ![Build](https://img.shields.io/github/workflow/status/woooferz/skarf/Docker/master?style=for-the-badge)
 ![Read the Docs](https://img.shields.io/readthedocs/skarf-docs?style=for-the-badge)
@@ -35,7 +37,7 @@ services:
     volumes:
       - "./static:/app/static" # To store data in the [website]/static/ url
       - "./config:/app/config" # To store the config.yml config
-    image: "ghcr.io/woooferz/skarf:master"
+    image: "wooferz/skarf:master"
 ```
 
 After running, 2 new directories should pop up `static/` and `config/` it is important to copy the `config/config.yml` into the `config/` directory and restarting the container so skarf can configure itself and if you want your own images, you need to put files into `static/` and it can be accessed from the config with under the `static/` url.
