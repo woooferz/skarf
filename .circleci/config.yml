@@ -14,8 +14,10 @@ jobs:
       - run:
           name: Setup Python
           command: |
+            sudo apt-get install software-properties-common
+            sudo add-apt-repository ppa:deadsnakes/ppa
             sudo apt-get update
-            sudo apt-get install python
+            sudo apt-get install python.8
 
       - run:
           name: Setup Versioning
