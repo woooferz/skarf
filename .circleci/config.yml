@@ -1,4 +1,7 @@
 version: 2.1
+orbs:
+  python: circleci/python@2.0.3
+
 jobs:
   build:
     docker:
@@ -19,10 +22,13 @@ jobs:
           command: |
             set +o pipefail
             docker load -i /caches/app.tar | true
+      - python/install-packages:
+          pkg-manager: pip
       - run:
           name: Setup Versioning
           command: |
             pip install shyaml
+            cat info.yml | shyaml get-value version
       - run:
           name: Build and Push application Docker image
           command: |
