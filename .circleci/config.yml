@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  python: circleci/python@2.0.3
 
 jobs:
   build:
@@ -10,10 +8,14 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
     steps:
-      - python/install-packages:
-            pkg-manager: pip
+      
       - checkout
       - setup_remote_docker
+      - run:
+          name: Setup Python
+          command: |
+            apt-get install python
+
       - run:
           name: Setup Versioning
           command: |
