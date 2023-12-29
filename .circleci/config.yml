@@ -10,10 +10,10 @@ jobs:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
     steps:
+      - python/install-packages:
+            pkg-manager: pip
       - checkout
       - setup_remote_docker
-      - python/install-packages:
-          pkg-manager: pip
       - run:
           name: Setup Versioning
           command: |
