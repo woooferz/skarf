@@ -20,7 +20,8 @@ jobs:
       - run:
           name: Setup Versioning
           command: |
-            python -m pip install shyaml
+            where python3
+            python3 -m pip install shyaml
             cat info.yml | shyaml get-value version
       - run:
           name: Build and Push application Docker image
