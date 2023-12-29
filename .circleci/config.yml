@@ -37,3 +37,6 @@ jobs:
             docker tag $DOCKERHUB_USERNAME/skarf:$TAG $DOCKERHUB_USERNAME/skarf:$CIRCLE_BRANCH
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
             docker push $DOCKERHUB_USERNAME/skarf:$TAG
+            docker push $DOCKERHUB_USERNAME/skarf:$latest
+            docker push $DOCKERHUB_USERNAME/skarf:$CIRCLE_BRANCH
+
